@@ -1,0 +1,29 @@
+<h1><%= @therapist.name %></h1>
+<ul class="list-group">
+
+<% @appointments.each do |date, items| %>
+  <li class="list-group-item list-group-item-primary ">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><%= date %></div>
+      <table class="table table-striped ">
+        <thead>
+          <tr>
+            <th scope="col">Time</th>
+            <th scope="col">Duration</th>
+          </tr>            
+        </thead>
+
+        <tbody>
+        <% items.each do |a|%>
+          <tr>
+            <td><%= a.start.strftime("%H:%M") %></td>
+            <td><%= a.duration %> minutes</td>
+          </tr>
+        <% end %>
+
+        </tbody>
+      </table>
+    </div>
+  </li>
+<% end %>
+</ul>

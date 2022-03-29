@@ -1,0 +1,23 @@
+<h1>Appointments#index</h1>
+<p>Find me in app/views/appointments/index.html.erb</p>
+
+<%= form_with url: "/appointments/show", method: :get do |form| %>
+<div class="row">
+    <div class="col">
+        <%= form.label :date, "Select date" %>
+        <%= form.date_field :date %>
+    </div>
+
+    <div class="col">
+        <%= form.radio_button :duration, "30", class: "form-label" %>
+        <%= form.label :duration, "30 minutes", class: "form-control" %>
+
+        <%= form.radio_button :duration, "60", class:  %>
+        <%= form.label :duration, "60 minutes" %>
+    </div>
+
+  <%= form.collection_check_boxes :ids, @therapists.order(:name), :id, :name %>
+
+  <%= form.submit "Submit" %>
+
+<% end %>

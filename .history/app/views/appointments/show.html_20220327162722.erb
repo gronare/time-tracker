@@ -1,0 +1,27 @@
+<h1>Appointments#show</h1>
+<p>Find me in app/views/appointments/show.html.erb</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Therapist</th>
+      <% @slots.each do |slot| %>
+      <th scope="col"><%= slot[:start].strftime("%H:%M") %></th>
+      <%end%>
+    </tr>
+  </thead>
+  <tbody>
+  <% @therapists.each do |therapist| %>
+    <tr>
+      <th scope="row"><%= therapist.name %></th>
+      <% @slots.each do  %><td class="table-danger"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="table-danger"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

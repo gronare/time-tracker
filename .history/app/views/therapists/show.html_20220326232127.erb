@@ -1,0 +1,10 @@
+<h1><%= @therapist.name %></h1>
+<ul class="list-group">
+
+<% @appointments.each do |day, items| %>
+
+  <li class="list-group-item"><%= day %></li>
+  <%>
+  </li>
+<% end %>  
+</ul>

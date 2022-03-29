@@ -1,0 +1,19 @@
+<h1><%= @therapist.name %></h1>
+<ul class="list-group">
+
+  <% @appointments.each do |day, items| %>
+
+  <li class="list-group-item"><%= day %></li>
+    <ul class="list-group list-group-flush">
+    
+    <% items.each do |a|%>
+    
+        <li class="list-group-item"><%= a.start.strftime("%H:%M") %> + <%= a.duration %> minutes</li>
+    
+    <% end %>
+</ul>
+  </li>
+
+<% end %>
+
+</ul>
